@@ -1,0 +1,56 @@
+### 1. Obtener todos los libros
+GET http://localhost:3000/libros
+Accept: application/json
+
+###
+
+### 2. Obtener libro por ID existente
+GET http://localhost:3000/libros/1
+Accept: application/json
+
+###
+
+### 3. Obtener libro por ID inexistente (debe devolver 404)
+GET http://localhost:3000/libros/999
+Accept: application/json
+
+###
+
+### 4. Crear un nuevo libro (201 Created + Header Location)
+POST http://localhost:3000/libros
+Content-Type: application/json
+
+{
+  "titulo": "Pedro Páramo",
+  "autor": "Rulfo",
+  "disponible": true
+}
+
+###
+
+### 5. Reemplazar libro completo por ID (200 OK)
+PUT http://localhost:3000/libros/4
+Content-Type: application/json
+
+{
+  "titulo": "Pedro Páramo (Edición Conmemorativa)",
+  "autor": "Juan Rulfo",
+  "disponible": true
+}
+
+###
+
+### 6. Actualización parcial por ID (200 OK)
+PATCH http://localhost:3000/libros/4
+Content-Type: application/json
+
+{
+  "disponible": false
+}
+
+###
+
+### 7. Eliminar libro por ID (204 No Content)
+DELETE http://localhost:3000/libros/4
+
+###
